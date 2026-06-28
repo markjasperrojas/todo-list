@@ -1,0 +1,206 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --bg-color: rgba(0, 0, 0, 0.8);
+  --bg2-color: rgba(255, 255, 255, 0.1);
+  --white: #ffffff;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: "Pixelify Sans", sans-serif;
+  min-height: 101vh;
+  display: flex;
+  flex-direction: column;
+  background-image: url(./assets/background.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  color: var(--white);
+}
+
+/* === HEADER === */
+
+header {
+  padding: 2rem 5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+nav {
+  display: flex;
+  gap: 1rem;
+}
+
+nav button {
+  padding: 1rem;
+  font-family: inherit;
+  font-size: 1.8rem;
+  font-weight: 500;
+  border: none;
+  background: rgba(0, 0, 0, 0.4);
+  color: var(--white);
+}
+
+nav button:hover {
+  cursor: pointer;
+  background: var(--bg2-color);
+}
+
+.active {
+  background: var(--bg2-color);
+}
+
+#logo {
+  width: 6rem;
+  margin-left: 5rem;
+}
+
+/* === CONTENT === */
+
+#content {
+  padding-bottom: 3rem;
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* for menu */
+
+.menu {
+  display: grid;
+  grid-template-columns: repeat(2, 40rem);
+  grid-template-rows: repeat(2, 25rem);
+  gap: 3rem;
+}
+
+.card {
+  padding: 3rem;
+  background: var(--bg-color);
+  border-radius: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.card:hover {
+  cursor: pointer;
+  background: rgba(0, 0, 0, 0.9);
+}
+
+.card img {
+  width: 10rem;
+}
+
+.prod-name {
+  font-size: 2.5rem;
+  font-weight: 600;
+}
+
+.card div p:nth-child(2) {
+  font-size: 1.5rem;
+}
+
+.card div {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+/* for contact */
+
+.contact {
+  padding: 3rem;
+  width: 83rem;
+  height: 53rem;
+  background: var(--bg-color);
+  border-radius: 1rem;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.contact div div img {
+  width: 6rem;
+}
+
+.contact div div {
+  display: flex;
+  align-items: center;
+  font-size: 1.8rem;
+  gap: 1rem;
+}
+
+.map {
+  width: 40rem;
+  height: 40rem;
+}
+
+.contact-info {
+  display: flex;
+  flex-direction: column;
+  gap: 5rem;
+}
+
+/* === FOOTER === */
+
+#github-logo {
+  width: 3rem;
+}
+
+#github-logo:hover {
+  transform: scale(1.05);
+}
+
+footer {
+  padding: 1rem;
+  font-size: 1.8rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+footer p a {
+  text-decoration: none;
+  color: var(--white);
+}
+
+#copyright {
+  font-family: "Silkscreen", sans-serif;
+}
+
+/* === GLOBAL STYLES === */
+
+header,
+footer {
+  background: var(--bg-color);
+}
+
+svg {
+  width: 3rem;
+  fill: rgb(205, 197, 197);
+  margin: 1rem 0 0 1rem;
+}
+
+svg:hover {
+  cursor: pointer;
+}
+
+#music-btn {
+  background: rgba(0, 0, 0, 0);
+  border: none;
+  width: 3rem;
+  height: 3rem;
+}
