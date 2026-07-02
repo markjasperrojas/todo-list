@@ -7,4 +7,8 @@ export class Project {
   addTodo(todo) {
     this.todoList.push(todo);
   }
+
+  removeTodo(todoTitle) {
+    this.todoList = this.todoList.filter((todo) => todo.title !== todoTitle);
+  }
 }
