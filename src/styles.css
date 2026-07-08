@@ -25,11 +25,36 @@ body {
 
 .sidebar {
   background: var(--sidebar);
+  padding: 3rem;
+}
+
+.h2 {
+  font-size: 3rem;
+  font-weight: 600;
+}
+
+.my-project-h2 {
+  margin-top: 5rem;
+  font-size: 2.5rem;
+  font-weight: 600;
+}
+
+.sidebar > div:nth-child(1) button {
+  width: 100%;
+  text-align: left;
 }
 
 /* === CONTENT === */
 
 .content {
+  padding: 3rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.output {
+  background: aqua;
+  flex: 1;
 }
 
 /* === FOOTER === */
@@ -63,3 +88,11 @@ footer a:hover {
 }
 
 /* === GLOBAL STYLES === */
+
+button {
+  cursor: pointer;
+}
+
+dialog {
+  margin: auto;
+}

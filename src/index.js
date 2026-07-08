@@ -1,7 +1,6 @@
 import "./styles.css";
-import { Todo } from "./todo.js";
-import { Project } from "./project.js";
-import { isToday, parseISO, isThisWeek } from "date-fns";
+import "./project-display-controller.js";
+// import { isToday, isThisWeek, parseISO } from "date-fns";
 
 // const allTodos = [];
 
@@ -25,6 +24,10 @@ import { isToday, parseISO, isThisWeek } from "date-fns";
 //   "Finish Chapter 5",
 // );
 // allTodos.push(todoItemThree);
+
+// allProjects.push(todoItemOne);
+// allProjects.push(todoItemTwo);
+// allProjects.push(todoItemThree);
 
 // const todoItemFour = new Todo(
 //   "Workout",

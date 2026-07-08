@@ -7,9 +7,42 @@
     <title>Todo List</title>
   </head>
   <body>
-    <div class="sidebar"></div>
+    <div class="sidebar">
+      <div>
+        <p class="h2">TODO LIST</p>
+        <div><button>All</button></div>
+        <div><button>Today</button></div>
+        <div><button>This Week</button></div>
+      </div>
 
-    <div class="content"></div>
+      <div>
+        <p class="my-project-h2">My Projects</p>
+        <button type="button" id="show-project-modal">+</button>
+      </div>
+      <div class="show-projects"></div>
+    </div>
+
+    <dialog id="project-dialog">
+      <form id="project-form">
+        <p>Add Project</p>
+
+        <input
+          type="text"
+          name="project-title"
+          id="project-title"
+          placeholder="Project name"
+          required
+        />
+
+        <button type="submit">Add Project</button>
+        <button type="button" id="close-project-modal">Cancel</button>
+      </form>
+    </dialog>
+
+    <div class="content">
+      <p class="h2">Dummy Title</p>
+      <div class="output"></div>
+    </div>
 
     <footer>
       <p>
