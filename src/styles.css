@@ -23,9 +23,17 @@ body {
 
 /* === SIDEBAR === */
 
+#logo {
+  width: 7rem;
+}
+
 .sidebar {
   background: var(--sidebar);
   padding: 3rem;
+  display: flex;
+  flex-direction: column;
+  gap: 5rem;
+  font-size: 2rem;
 }
 
 .h2 {
@@ -34,14 +42,26 @@ body {
 }
 
 .my-project-h2 {
-  margin-top: 5rem;
   font-size: 2.5rem;
-  font-weight: 600;
 }
 
-.sidebar > div:nth-child(1) button {
-  width: 100%;
-  text-align: left;
+.title-div {
+  display: flex;
+  align-items: center;
+  margin-bottom: 2.5rem;
+}
+
+.filter-section {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
+}
+
+.filter-div {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
 }
 
 /* === CONTENT === */
@@ -95,4 +115,12 @@ button {
 
 dialog {
   margin: auto;
+}
+
+img {
+  width: 4.5rem;
+}
+
+svg {
+  width: 3rem;
 }
