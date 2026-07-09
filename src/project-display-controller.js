@@ -1,4 +1,5 @@
 import { Project } from "./project.js";
+import { todoIcon } from "./todo-icon.js";
 
 const allProjects = [];
 const projectDialog = document.getElementById("project-dialog");
@@ -36,13 +37,19 @@ function renderProjects() {
   showProjects.innerHTML = "";
 
   allProjects.forEach((project) => {
-    const div = document.createElement("button");
-    div.textContent = project.projectName;
+    const div = document.createElement("div");
+    const span = document.createElement("span");
+
+    div.classList.add("tab");
+    div.innerHTML = todoIcon;
+    span.textContent = project.projectName;
+    div.appendChild(span);
     showProjects.appendChild(div);
 
+    // create another function for this:
     div.addEventListener("click", () => {
       project.todoList.forEach((todo) => {
-        const div2 = document.createElement("button");
+        const div2 = document.createElement("div");
         div2.textContent = todo.title;
 
         output.appendChild(div2);
