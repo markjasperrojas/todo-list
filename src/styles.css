@@ -17,7 +17,7 @@ body {
   min-height: 100vh;
   font-family: system-ui, sans-serif;
   display: grid;
-  grid-template-columns: 38rem 1fr;
+  grid-template-columns: 35rem 1fr;
   grid-template-rows: 1fr 5rem;
 }
 
@@ -59,6 +59,12 @@ body {
   padding: 1rem;
 }
 
+.tab:hover {
+  background: #ffffff;
+  cursor: pointer;
+  border-radius: 1rem;
+}
+
 .filter-div,
 .show-projects {
   display: flex;
@@ -83,9 +89,10 @@ body {
 /* === CONTENT === */
 
 .content {
-  padding: 3rem;
+  padding: 3rem 7rem;
   display: flex;
   flex-direction: column;
+  gap: 1.5rem;
 }
 
 .output {

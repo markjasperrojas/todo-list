@@ -1,5 +1,7 @@
 import "./styles.css";
 import "./project-display-controller.js";
+import "./project-todo-display-controller.js";
+
 // import { isToday, isThisWeek, parseISO } from "date-fns";
 
 // const allTodos = [];
