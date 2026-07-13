@@ -1,6 +1,7 @@
 import { Project } from "./project.js";
 import { todoIcon } from "./todo-icon.js";
 import { Todo } from "./todo.js";
+import { renderProjectContents } from "./project-todo-display-controller.js";
 
 const allProjects = [];
 const projectDialog = document.getElementById("project-dialog");
@@ -8,7 +9,6 @@ const openProjectBtn = document.getElementById("show-project-modal");
 const closeProjectBtn = document.getElementById("close-project-modal");
 const projectForm = document.getElementById("project-form");
 const showProjects = document.querySelector(".show-projects");
-const output = document.querySelector(".output");
 const contentTab = document.getElementById("content-tab");
 
 openProjectBtn.addEventListener("click", () => {
@@ -48,17 +48,7 @@ function renderProjects() {
     div.appendChild(span);
     showProjects.appendChild(div);
 
-    // create another function for this later
-    div.addEventListener("click", () => {
-      contentTab.textContent = project.projectName;
-
-      project.todoList.forEach((todo) => {
-        const div2 = document.createElement("div");
-        div2.textContent = todo.title;
-
-        output.appendChild(div2);
-      });
-    });
+    renderProjectContents(div, contentTab, project);
   });
 }
 
@@ -86,3 +76,5 @@ function renderProjects() {
 // gym.todoList.push(todoItemOne);
 // gym.todoList.push(todoItemTwo);
 // gym.todoList.push(todoItemThree);
+
+// renderProjects();
