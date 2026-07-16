@@ -95,11 +95,22 @@ body {
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
+  font-size: 2rem;
 }
 
 .output {
-  /* background: aqua; */
   flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.todo-output {
+  display: flex;
+  justify-content: space-between;
+  background: var(--sidebar);
+  padding: 1rem 2rem;
+  border-radius: 1rem;
 }
 
 /* === FOOTER === */

@@ -9,7 +9,8 @@
 // }
 
 export class Todo {
-  constructor(title) {
+  constructor(title, dueDate) {
     this.title = title;
+    this.dueDate = dueDate;
   }
 }

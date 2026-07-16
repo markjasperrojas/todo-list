@@ -13,6 +13,10 @@ closeProjectTodoBtn.addEventListener("click", () => {
   projectTodoDialog.close();
 });
 
+addTodoBtn.addEventListener("click", () => {
+  projectTodoDialog.showModal();
+});
+
 projectTodoForm.addEventListener("submit", (e) => {
   e.preventDefault();
 
@@ -24,10 +28,10 @@ projectTodoForm.addEventListener("submit", (e) => {
 
   const newTodo = new Todo(
     projectTodoTitle,
-    description,
+    // description,
     dueDate,
-    priority,
-    notes,
+    // priority,
+    // notes,
   );
 
   const project = allProjects.find((p) => p.id === addTodoBtn.id);
@@ -47,17 +51,9 @@ projectTodoForm.addEventListener("submit", (e) => {
 
 export function renderProjectContents(div, contentTab, project) {
   div.addEventListener("click", () => {
-    output.innerHTML = "";
-
     addTodoBtn.id = project.id;
 
     contentTab.textContent = project.projectName;
-
-    addTodoBtn.addEventListener("click", () => {
-      projectTodoDialog.showModal();
-    });
-
-    addTodoBtnDiv.appendChild(addTodoBtn);
 
     renderTodos(project);
   });
@@ -67,9 +63,17 @@ function renderTodos(project) {
   output.innerHTML = "";
 
   project.todoList.forEach((todo) => {
-    const div2 = document.createElement("div");
-    div2.textContent = todo.title;
+    const div = document.createElement("div");
+    const p = document.createElement("p");
+    const span = document.createElement("span");
 
-    output.appendChild(div2);
+    div.classList.add("todo-output");
+    p.textContent = todo.title;
+    span.textContent = todo.dueDate;
+
+    div.appendChild(p);
+    div.appendChild(span);
+
+    output.appendChild(div);
   });
 }
