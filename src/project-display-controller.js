@@ -3,7 +3,7 @@ import { todoIcon } from "./todo-icon.js";
 import { Todo } from "./todo.js";
 import { renderProjectContents } from "./project-todo-display-controller.js";
 
-const allProjects = [];
+export const allProjects = [];
 const projectDialog = document.getElementById("project-dialog");
 const openProjectBtn = document.getElementById("show-project-modal");
 const closeProjectBtn = document.getElementById("close-project-modal");

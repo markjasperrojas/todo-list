@@ -7,6 +7,7 @@
 :root {
   --grey: #d9d9d9;
   --sidebar: #b59f9f;
+  --black: #1a1a1a;
 }
 
 html {
@@ -19,6 +20,7 @@ body {
   display: grid;
   grid-template-columns: 35rem 1fr;
   grid-template-rows: 1fr 5rem;
+  color: var(--black);
 }
 
 /* === SIDEBAR === */

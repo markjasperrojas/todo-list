@@ -60,7 +60,9 @@
     <div class="content">
       <p class="h2" id="content-tab">All</p>
       <div class="output"></div>
-      <div class="todos-plus-btn"></div>
+      <div class="todos-plus-btn-div">
+        <button type="button" class="todo-plus-btn">+</button>
+      </div>
     </div>
 
     <footer>
@@ -110,7 +112,6 @@
           name="description"
           id="description"
           placeholder="Description"
-          required
         />
 
         <input
@@ -118,7 +119,6 @@
           name="due-date"
           id="due-date"
           placeholder="Due date"
-          required
         />
 
         <input
@@ -126,16 +126,9 @@
           name="priority"
           id="priority"
           placeholder="Priority"
-          required
         />
 
-        <input
-          type="text"
-          name="notes"
-          id="notes"
-          placeholder="Notes"
-          required
-        />
+        <input type="text" name="notes" id="notes" placeholder="Notes" />
 
         <button type="submit">Add Todo</button>
         <button type="button" id="close-project-todo-modal">Cancel</button>
