@@ -113,6 +113,27 @@ body {
   border-radius: 1rem;
 }
 
+.todo-output div {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+}
+
+.todo-output .remove-todo button {
+  background: rgba(0, 0, 0, 0);
+  border: none;
+  font-size: 2rem;
+  color: inherit;
+}
+
+.todo-output .check-todo button {
+  border: none;
+  border-radius: 50%;
+  width: 2rem;
+  height: 2rem;
+  background: #ffffff;
+}
+
 /* === FOOTER === */
 
 #github-logo {

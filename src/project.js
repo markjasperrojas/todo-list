@@ -9,7 +9,7 @@ export class Project {
     this.todoList.push(todo);
   }
 
-  removeTodo(todoTitle) {
-    this.todoList = this.todoList.filter((todo) => todo.title !== todoTitle);
+  removeTodo(todoId) {
+    this.todoList = this.todoList.filter((todo) => todo.id !== todoId);
   }
 }

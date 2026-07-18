@@ -36,7 +36,7 @@ projectTodoForm.addEventListener("submit", (e) => {
 
   const project = allProjects.find((p) => p.id === addTodoBtn.id);
 
-  project.todoList.push(newTodo);
+  project.addTodo(newTodo);
 
   document.getElementById("project-todo-title").value = "";
   document.getElementById("description").value = "";
@@ -63,17 +63,41 @@ function renderTodos(project) {
   output.innerHTML = "";
 
   project.todoList.forEach((todo) => {
-    const div = document.createElement("div");
+    const mainDiv = document.createElement("div");
+    const div2 = document.createElement("div");
+    const div3 = document.createElement("div");
     const p = document.createElement("p");
     const span = document.createElement("span");
+    const removeTodoBtn = document.createElement("button");
+    const checkTodoBtn = document.createElement("button");
 
-    div.classList.add("todo-output");
+    mainDiv.classList.add("todo-output");
+    div2.classList.add("remove-todo");
+    div3.classList.add("check-todo");
+
     p.textContent = todo.title;
     span.textContent = todo.dueDate;
+    removeTodoBtn.textContent = "x";
 
-    div.appendChild(p);
-    div.appendChild(span);
+    removeTodoBtn.addEventListener("click", () => {
+      project.removeTodo(todo.id);
 
-    output.appendChild(div);
+      renderTodos(project);
+    });
+
+    checkTodoBtn.addEventListener("click", () => {
+      project.removeTodo(todo.id);
+
+      renderTodos(project);
+    });
+
+    div3.appendChild(checkTodoBtn);
+    div3.appendChild(p);
+    div2.appendChild(span);
+    div2.appendChild(removeTodoBtn);
+    mainDiv.appendChild(div3);
+    mainDiv.appendChild(div2);
+
+    output.appendChild(mainDiv);
   });
 }
