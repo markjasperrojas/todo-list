@@ -3,7 +3,7 @@ import { todoIcon } from "./todo-icon.js";
 import { Todo } from "./todo.js";
 import { renderProjectContents } from "./project-todo-display-controller.js";
 
-export const allProjects = [];
+export let allProjects = [];
 const projectDialog = document.getElementById("project-dialog");
 const openProjectBtn = document.getElementById("show-project-modal");
 const closeProjectBtn = document.getElementById("close-project-modal");
@@ -40,41 +40,26 @@ function renderProjects() {
 
   allProjects.forEach((project) => {
     const div = document.createElement("div");
+    const div2 = document.createElement("div");
     const span = document.createElement("span");
+    const removeProjectBtn = document.createElement("button");
 
     div.classList.add("tab");
-    div.innerHTML = todoIcon;
+    div2.innerHTML = todoIcon;
     span.textContent = project.projectName;
-    div.appendChild(span);
+    removeProjectBtn.textContent = "x";
+
+    removeProjectBtn.addEventListener("click", () => {
+      allProjects = allProjects.filter((item) => item.id !== project.id);
+
+      renderProjects();
+    });
+
+    div2.appendChild(span);
+    div.appendChild(div2);
+    div.appendChild(removeProjectBtn);
     showProjects.appendChild(div);
 
     renderProjectContents(div, contentTab, project);
   });
 }
-
-// const gym = new Project("Gym");
-// allProjects.push(gym);
-
-// const todoItemOne = new Todo(
-//   "Walk",
-//   "You have to walk atleast 1km!",
-//   "2026-07-02",
-//   "High",
-//   "None for now",
-// );
-
-// const todoItemTwo = new Todo("TEST", "Test", "2026-06-25", "Medium", "test");
-
-// const todoItemThree = new Todo(
-//   "Read Book",
-//   "Read at least 30 pages of a book.",
-//   "2026-07-02",
-//   "Medium",
-//   "Finish Chapter 5",
-// );
-
-// gym.todoList.push(todoItemOne);
-// gym.todoList.push(todoItemTwo);
-// gym.todoList.push(todoItemThree);
-
-// renderProjects();

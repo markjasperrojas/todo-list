@@ -88,6 +88,30 @@ body {
   background: rgba(0, 0, 0, 0);
 }
 
+.show-projects div {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.show-projects .tab {
+  justify-content: space-between;
+}
+
+.show-projects .tab button {
+  background: rgba(0, 0, 0, 0);
+  border: none;
+  font-size: 2rem;
+  color: inherit;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.show-projects .tab:hover button {
+  opacity: 1;
+  pointer-events: auto;
+}
+
 /* === CONTENT === */
 
 .content {
