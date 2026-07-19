@@ -1,7 +1,7 @@
 import { Todo } from "./todo.js";
 import { allProjects } from "./project-display-controller.js";
 
-const allTodos = [];
+let allTodos = [];
 const projectTodoDialog = document.getElementById("project-todo-dialog");
 const addTodoBtnDiv = document.querySelector(".todos-plus-btn-div");
 const closeProjectTodoBtn = document.getElementById("close-project-todo-modal");
@@ -37,6 +37,8 @@ projectTodoForm.addEventListener("submit", (e) => {
   const project = allProjects.find((p) => p.id === addTodoBtn.id);
 
   project.addTodo(newTodo);
+
+  allTodos.push(newTodo);
 
   document.getElementById("project-todo-title").value = "";
   document.getElementById("description").value = "";
@@ -101,3 +103,5 @@ function renderTodos(project) {
     output.appendChild(mainDiv);
   });
 }
+
+export { allTodos, output };

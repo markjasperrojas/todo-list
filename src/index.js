@@ -1,10 +1,11 @@
 import "./styles.css";
 import "./project-display-controller.js";
 import "./project-todo-display-controller.js";
+import "./all.js";
+import { allTodos } from "./project-todo-display-controller.js";
+import { Todo } from "./todo.js";
 
 // import { isToday, isThisWeek, parseISO } from "date-fns";
-
-// const allTodos = [];
 
 // const todoItemOne = new Todo(
 //   "Walk",
@@ -26,10 +27,6 @@ import "./project-todo-display-controller.js";
 //   "Finish Chapter 5",
 // );
 // allTodos.push(todoItemThree);
-
-// allProjects.push(todoItemOne);
-// allProjects.push(todoItemTwo);
-// allProjects.push(todoItemThree);
 
 // const todoItemFour = new Todo(
 //   "Workout",
