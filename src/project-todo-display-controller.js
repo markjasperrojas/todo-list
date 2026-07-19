@@ -28,10 +28,10 @@ projectTodoForm.addEventListener("submit", (e) => {
 
   const newTodo = new Todo(
     projectTodoTitle,
-    // description,
+    description,
     dueDate,
-    // priority,
-    // notes,
+    priority,
+    notes,
   );
 
   const project = allProjects.find((p) => p.id === addTodoBtn.id);
