@@ -3,10 +3,9 @@ import "./project-display-controller.js";
 import "./project-todo-display-controller.js";
 import "./all.js";
 import "./today.js";
+import "./this-week.js";
 import { allTodos } from "./project-todo-display-controller.js";
 import { Todo } from "./todo.js";
-
-// import { isToday, isThisWeek, parseISO } from "date-fns";
 
 const todoItemOne = new Todo(
   "Walk",
@@ -17,13 +16,13 @@ const todoItemOne = new Todo(
 );
 allTodos.push(todoItemOne);
 
-const todoItemTwo = new Todo("TEST", "Test", "2026-06-25", "Medium", "test");
+const todoItemTwo = new Todo("TEST", "Test", "2026-07-25", "Medium", "test");
 allTodos.push(todoItemTwo);
 
 const todoItemThree = new Todo(
   "Read Book",
   "Read at least 30 pages of a book.",
-  "2026-07-02",
+  "2026-07-25",
   "Medium",
   "Finish Chapter 5",
 );
@@ -41,7 +40,7 @@ allTodos.push(todoItemFour);
 const todoItemFive = new Todo(
   "Grocery Shopping",
   "Buy vegetables, fruits, milk, and eggs.",
-  "2026-07-05",
+  "2026-07-25",
   "Low",
   "Use discount coupons",
 );
