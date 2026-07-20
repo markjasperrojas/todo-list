@@ -1,11 +1,13 @@
 import { allTodos } from "./project-todo-display-controller.js";
 import { output } from "./project-todo-display-controller.js";
 import { isToday, parseISO } from "date-fns";
+import { addTodoBtnDiv } from "./project-todo-display-controller.js";
 
 const todayDiv = document.getElementById("today-div");
 
 todayDiv.addEventListener("click", () => {
   output.innerHTML = "";
+  addTodoBtnDiv.innerHTML = "";
 
   const todaysDue = allTodos.filter((todo) => isToday(parseISO(todo.dueDate)));
 

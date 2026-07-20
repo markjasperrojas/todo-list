@@ -7,15 +7,14 @@ const addTodoBtnDiv = document.querySelector(".todos-plus-btn-div");
 const closeProjectTodoBtn = document.getElementById("close-project-todo-modal");
 const projectTodoForm = document.getElementById("project-todo-form");
 const output = document.querySelector(".output");
-const addTodoBtn = document.querySelector(".todo-plus-btn");
 
 closeProjectTodoBtn.addEventListener("click", () => {
   projectTodoDialog.close();
 });
 
-addTodoBtn.addEventListener("click", () => {
-  projectTodoDialog.showModal();
-});
+// addTodoBtn.addEventListener("click", () => {
+//   projectTodoDialog.showModal();
+// });
 
 projectTodoForm.addEventListener("submit", (e) => {
   e.preventDefault();
@@ -34,7 +33,7 @@ projectTodoForm.addEventListener("submit", (e) => {
     notes,
   );
 
-  const project = allProjects.find((p) => p.id === addTodoBtn.id);
+  const project = allProjects.find((p) => p.id === addTodoBtnDiv.id);
 
   project.addTodo(newTodo);
 
@@ -53,7 +52,18 @@ projectTodoForm.addEventListener("submit", (e) => {
 
 export function renderProjectContents(div, contentTab, project) {
   div.addEventListener("click", () => {
-    addTodoBtn.id = project.id;
+    addTodoBtnDiv.innerHTML = "";
+
+    const addTodoBtn = document.createElement("button");
+    addTodoBtn.textContent = "+";
+
+    addTodoBtn.addEventListener("click", () => {
+      projectTodoDialog.showModal();
+    });
+
+    addTodoBtnDiv.appendChild(addTodoBtn);
+
+    addTodoBtnDiv.id = project.id;
 
     contentTab.textContent = project.projectName;
 
@@ -104,4 +114,4 @@ function renderTodos(project) {
   });
 }
 
-export { allTodos, output };
+export { allTodos, output, addTodoBtnDiv };
