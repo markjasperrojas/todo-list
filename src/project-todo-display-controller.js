@@ -12,10 +12,6 @@ closeProjectTodoBtn.addEventListener("click", () => {
   projectTodoDialog.close();
 });
 
-// addTodoBtn.addEventListener("click", () => {
-//   projectTodoDialog.showModal();
-// });
-
 projectTodoForm.addEventListener("submit", (e) => {
   e.preventDefault();
 
@@ -50,8 +46,16 @@ projectTodoForm.addEventListener("submit", (e) => {
   projectTodoDialog.close();
 });
 
-export function renderProjectContents(div, contentTab, project) {
+function renderProjectContents(div, contentTab, project) {
   div.addEventListener("click", () => {
+    if (allProjects.length === 0) {
+      output.innerHTML = "";
+      addTodoBtnDiv.innerHTML = "";
+      contentTab.textContent = "All";
+
+      return;
+    }
+
     addTodoBtnDiv.innerHTML = "";
 
     const addTodoBtn = document.createElement("button");
@@ -94,6 +98,8 @@ function renderTodos(project) {
     removeTodoBtn.addEventListener("click", () => {
       project.removeTodo(todo.id);
 
+      allTodos = allTodos.filter((item) => item.id !== todo.id);
+
       renderTodos(project);
     });
 
@@ -114,4 +120,4 @@ function renderTodos(project) {
   });
 }
 
-export { allTodos, output, addTodoBtnDiv };
+export { allTodos, output, addTodoBtnDiv, renderProjectContents };

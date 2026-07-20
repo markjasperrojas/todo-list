@@ -1,12 +1,14 @@
 import { allTodos } from "./project-todo-display-controller.js";
 import { output } from "./project-todo-display-controller.js";
 import { addTodoBtnDiv } from "./project-todo-display-controller.js";
+import { contentTab } from "./project-display-controller.js";
 
 const allDiv = document.getElementById("all-div");
 
 allDiv.addEventListener("click", () => {
   output.innerHTML = "";
   addTodoBtnDiv.innerHTML = "";
+  contentTab.textContent = "All";
 
   allTodos.forEach((todo) => {
     const div = document.createElement("div");

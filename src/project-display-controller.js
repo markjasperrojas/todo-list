@@ -2,8 +2,9 @@ import { Project } from "./project.js";
 import { todoIcon } from "./todo-icon.js";
 import { Todo } from "./todo.js";
 import { renderProjectContents } from "./project-todo-display-controller.js";
+import { allTodos } from "./project-todo-display-controller.js";
 
-export let allProjects = [];
+let allProjects = [];
 const projectDialog = document.getElementById("project-dialog");
 const openProjectBtn = document.getElementById("show-project-modal");
 const closeProjectBtn = document.getElementById("close-project-modal");
@@ -50,6 +51,13 @@ function renderProjects() {
     removeProjectBtn.textContent = "x";
 
     removeProjectBtn.addEventListener("click", () => {
+      const result = allTodos.filter((item1) => {
+        return !project.todoList.some((item2) => item2.id === item1.id);
+      });
+
+      allTodos.length = 0;
+      allTodos.push(...result);
+
       allProjects = allProjects.filter((item) => item.id !== project.id);
 
       renderProjects();
@@ -63,3 +71,5 @@ function renderProjects() {
     renderProjectContents(div, contentTab, project);
   });
 }
+
+export { allProjects, contentTab };

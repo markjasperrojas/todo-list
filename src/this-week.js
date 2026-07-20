@@ -2,12 +2,14 @@ import { allTodos } from "./project-todo-display-controller.js";
 import { output } from "./project-todo-display-controller.js";
 import { isThisWeek, parseISO } from "date-fns";
 import { addTodoBtnDiv } from "./project-todo-display-controller.js";
+import { contentTab } from "./project-display-controller.js";
 
 const weekDiv = document.getElementById("week-div");
 
 weekDiv.addEventListener("click", () => {
   output.innerHTML = "";
   addTodoBtnDiv.innerHTML = "";
+  contentTab.textContent = "This Week";
 
   const thisWeekDue = allTodos.filter((todo) =>
     isThisWeek(parseISO(todo.dueDate)),
