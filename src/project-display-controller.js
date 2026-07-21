@@ -4,6 +4,8 @@ import { Todo } from "./todo.js";
 import { renderProjectContents } from "./project-todo-display-controller.js";
 import { allTodos } from "./project-todo-display-controller.js";
 
+import { output, addTodoBtnDiv } from "./project-todo-display-controller.js";
+
 let allProjects = [];
 const projectDialog = document.getElementById("project-dialog");
 const openProjectBtn = document.getElementById("show-project-modal");

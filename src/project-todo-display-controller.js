@@ -54,6 +54,26 @@ function renderProjectContents(div, contentTab, project) {
       contentTab.textContent = "All";
 
       return;
+    } else if (!allProjects.some((item) => item.id === project.id)) {
+      output.innerHTML = "";
+      addTodoBtnDiv.innerHTML = "";
+      contentTab.textContent = "All";
+
+      allTodos.forEach((todo) => {
+        const div = document.createElement("div");
+        const p = document.createElement("p");
+        const span = document.createElement("span");
+
+        div.classList.add("todo-output");
+        p.textContent = todo.title;
+        span.textContent = todo.dueDate;
+
+        div.appendChild(p);
+        div.appendChild(span);
+        output.appendChild(div);
+      });
+
+      return;
     }
 
     addTodoBtnDiv.innerHTML = "";
